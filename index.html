@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CRAETING_A_CALCULATOR.css">
+</head>
+<body>
+    <main class="calculator">
+        <section class="input_field">
+            <input type="text" id="calculator_display" name="calculator_display" placeholder="CREATED BY GLIFFITS">
+        </section>
+        <section class="calculating_field">
+            <table cellspacing="10px">
+                <thead>
+                    <tr>
+                        <th><input type="button" value="AC" onclick="display_value_clear()"></th>
+                        <th><input type="button" value="DE" onclick="calculator_display.value = calculator_display.value.toString().slice(0 , -1)"></th>
+                        <th><input type="button" value="." onclick="display_value_point()"></th>
+                        <th><input type="button" value="/" onclick="display_value_divide()"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="button" value="7" onclick="display_value_seven()"></td>
+                        <td><input type="button" value="8" onclick="display_value_eight()"></td>
+                        <td><input type="button" value="9" onclick="display_value_nine()"></td>
+                        <td><input type="button" value="+" onclick="display_value_plus()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="4" onclick="display_value_four()"></td>
+                        <td><input type="button" value="5" onclick="display_value_five()"></td>
+                        <td><input type="button" value="6" onclick="display_value_six()"></td>
+                        <td><input type="button" value="-" onclick="display_value_minus()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="1" onclick="display_value_one()"></td>
+                        <td><input type="button" value="2" onclick="display_value_two()"></td>
+                        <td><input type="button" value="3" onclick="display_value_three()"></td>
+                        <td><input type="button" value="*" onclick="display_value_times()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="00" onclick="display_value_double_zeros()"></td>
+                        <td><input type="button" value="0" onclick="display_value_zero()"></td>
+                        <td><input type="button" value="^" onclick="display_value_power()"></td>
+                        <td><input type="button" id="equal_sign" value="=" onclick="calculator_display.value = eval(calculator_display.value)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        function display_value_times(){
+            document.getElementById('calculator_display').value += '*'
+        }
+        function display_value_one(){
+            document.getElementById('calculator_display').value += '1'
+        }
+        function display_value_two(){
+            document.getElementById('calculator_display').value += '2'
+        }
+        function display_value_three(){
+            document.getElementById('calculator_display').value += '3'
+        }
+        function display_value_four(){
+            document.getElementById('calculator_display').value += '4'
+        }
+        function display_value_five(){
+            document.getElementById('calculator_display').value += '5'
+        }
+        function display_value_six(){
+            document.getElementById('calculator_display').value += '6'
+        }
+        function display_value_seven(){
+            document.getElementById('calculator_display').value += '7'
+        }
+        function display_value_eight(){
+            document.getElementById('calculator_display').value += '8'
+        }
+        function display_value_nine(){
+            document.getElementById('calculator_display').value += '9'
+        }
+        function display_value_divide(){
+            document.getElementById('calculator_display').value += '/'
+        }
+        function display_value_plus(){
+            document.getElementById('calculator_display').value += '+'
+        }
+        function display_value_point(){
+            document.getElementById('calculator_display').value += '.'
+        }
+        function display_value_clear(){
+            document.getElementById('calculator_display').value = ''
+        }
+        function display_value_zero(){
+            document.getElementById('calculator_display').value += '0'
+        }
+        function display_value_power(){
+            document.getElementById('calculator_display').value += '^'
+        }
+        function display_value_double_zeros(){
+            document.getElementById('calculator_display').value += '00'
+        }
+        function display_value_minus(){
+            document.getElementById('calculator_display').value += '-'
+        }
+    </script>
+</body>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        min-height: 100vh;
+        background: radial-gradient(orange , black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main.calculator{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: silver;
+        border: 3px solid red;
+        border-radius: 2rem;
+    }
+    #calculator_display{
+        width: 80vw;
+        height: 10vh;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 1rem;
+        font-size: 40px;
+        font-weight: 700;
+        padding-left: 1rem;
+        background-color: rgba(255, 0, 0, 0.099);
+    }
+    thead input , tbody input{
+        background-color: orange;
+        height: 75px;
+        width: 75px;
+        border-radius: 1rem;
+        font-weight: 700;
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+    thead input:active , tbody input:active{
+        background-color: silver;
+    }
+    #calculator_display::placeholder{
+        font-size: 25px;
+        color: brown;
+        font-weight: 700;
+    }
+</style>
+</html>
